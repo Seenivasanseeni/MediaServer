@@ -8,7 +8,7 @@
 {% block treeview %}
 <ul>
     {% for dir in dirsOnly %}
-    <a href="/explore/{{folder}}/{{dir}}/"><li>{{dir}}</li></a>  
+    <a href="/explore/{{folder}}/{{dir}}"><li>{{dir}}</li></a>  
     {% endfor %}
 </ul>
 {% endblock %}
@@ -18,7 +18,7 @@
 
     <ul>
         {% for file_dir in dirs %}
-            <a href="/explore/{{folder}}/{{file_dir}}/"><li>{{file_dir}}</li></a>
+            <a href="/explore/{{folder}}/{{file_dir}}"><li>{{file_dir}}</li></a>
         {% endfor %}
     </ul>
 
