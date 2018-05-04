@@ -8,11 +8,11 @@ def index(request):
 def constructPath(dir):
     return "/home/seeni/"+str(dir)
 
-def explore(request,dir=""):
+def explore(request,dir="."):
     path=constructPath(dir)
     dirs=os.listdir(path)
     context={
-        'dir':path,
+        'dir':dir,
         'dirs':dirs
     }
     return render(request,'RemoteFileViewer/explorer.html',context=context)

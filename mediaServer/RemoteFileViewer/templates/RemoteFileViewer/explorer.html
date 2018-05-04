@@ -8,8 +8,8 @@
 {% block explorer %}
 
     <ul>
-        {% for dir in dirs %}
-            <li>{{dir}}</li>
+        {% for file_dir in dirs %}
+            <a href="/explore/{{dir}}/{{file_dir}}"><li>{{file_dir}}</li></a>
         {% endfor %}
     </ul>
 
