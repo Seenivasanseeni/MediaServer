@@ -26,11 +26,11 @@
 </head>
 <body>
     <div class="FolderDetails">
-        {% block directory %}
+        {% block folder %}
         {% endblock %}
     </div>
     <div>
-        <div class="TreeView">Seeni</div>
+        <div class="TreeView">{% block treeview %}{% endblock %}</div>
         <div class="Explorer">{% block explorer%}{% endblock %}</div>
     </div>
 </body>

@@ -1,15 +1,24 @@
 {% extends 'RemoteFileViewer/index.html' %}
 
 
-{% block directory %}
-    <h1>{{dir}}</h1>
+{% block folder %}
+    <h1>{{folder}}</h1>
 {% endblock %}
+
+{% block treeview %}
+<ul>
+    {% for dir in dirsOnly %}
+    <a href="/explore/{{folder}}/{{dir}}/"><li>{{dir}}</li></a>  
+    {% endfor %}
+</ul>
+{% endblock %}
+
 
 {% block explorer %}
 
     <ul>
         {% for file_dir in dirs %}
-            <a href="/explore/{{dir}}/{{file_dir}}/"><li>{{file_dir}}</li></a>
+            <a href="/explore/{{folder}}/{{file_dir}}/"><li>{{file_dir}}</li></a>
         {% endfor %}
     </ul>
 
