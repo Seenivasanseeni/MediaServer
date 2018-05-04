@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FileHome</title>
+    <style>
+        *{
+    color: red;
+    }
+    *{
+        border: 1px solid black;
+    }
+    .FolderDetails{
+        width: 100%;
+        background-color: black;
+    }
+    .TreeView{
+        background-color: blue;
+        float: left;
+        height: 100%;
+        width: 20%;
+        position: absolute;
+    }
+    .Explorer{    
+        background-color: yellow;
+        float: right;
+    }
+</style>
+</head>
+<body>
+    <div class="FolderDetails">
+        {% block directory %}
+        {% endblock %}
+    </div>
+    <div>
+        <div class="TreeView">Seeni</div>
+        <div class="Explorer">{% block explorer%}{% endblock %}</div>
+    </div>
+</body>
+</html>

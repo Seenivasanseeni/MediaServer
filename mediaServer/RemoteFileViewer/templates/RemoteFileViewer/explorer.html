@@ -1,0 +1,16 @@
+{% extends 'RemoteFileViewer/index.html' %}
+
+
+{% block directory %}
+    <h1>{{dir}}</h1>
+{% endblock %}
+
+{% block explorer %}
+
+    <ul>
+        {% for dir in dirs %}
+            <li>{{dir}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

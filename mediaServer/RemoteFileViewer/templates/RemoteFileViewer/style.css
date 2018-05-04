@@ -1,0 +1,14 @@
+*{
+    color: red;
+}
+
+*{
+    border: 1px solid black;
+}
+.TreeView{
+    background-color: blue;
+}
+.Explorer{
+    
+    background-color: yellow;
+}

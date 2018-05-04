@@ -1,6 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import os
 
-# Create your views here.
 def index(request):
-    return HttpResponse('Hello from Remote File Viewer')
+    return render(request,'RemoteFileViewer/index.html')
+
+def constructPath(dir):
+    return "/home/seeni/"+str(dir)
+
+def explore(request,dir=""):
+    path=constructPath(dir)
+    dirs=os.listdir(path)
+    context={
+        'dir':path,
+        'dirs':dirs
+    }
+    return render(request,'RemoteFileViewer/explorer.html',context=context)
