@@ -1,12 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import os
+from os.path import expanduser
+
+def get_home():
+    return expanduser("~")
 
 def index(request):
     return render(request,'RemoteFileViewer/index.html')
 
 def constructPath(dir):
-    return "/home/seeni/"+str(dir)
+    return os.path.join(get_home(),dir)
 
 def get_content_type(dir):
     return "application/"+dir.split('.')[-1]
@@ -49,5 +53,5 @@ def explore(request,dir="."):
         'dirsOnly':dirsOnly,
         'dirs':dirs
     }
-    
+
     return render(request,'RemoteFileViewer/explorer.html',context=context) 
