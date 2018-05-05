@@ -39,6 +39,7 @@ def explore(request,dir="."):
     try:
         dirs_i=os.listdir(path)
         dirs=removeHidden(dirs_i)
+        dirs.sort(key=lambda x : x.lower())
         dirsOnly=getOnlydirectories(path,dirs)
     except: # if dir is a file
         with open(constructPath(dir),'rb') as file:
